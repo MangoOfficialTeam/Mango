@@ -1,36 +1,62 @@
 # Mango
 
-**ListaSonora** — caso final de Programación con Estructuras Lineales (B3 + B4), Ingeniería Informática, Universidad Europea.
+**ListaSonora** — caso final de Programación con Estructuras Lineales (B3 + B4), Ingeniería Informática, Universidad Europea. Reproductor de música por consola con lista doblemente enlazada, pila, cola y catálogo con búsqueda binaria, todo implementado a mano.
 
-Reproductor de música por consola con lista de reproducción doblemente enlazada, pila (historial + deshacer), cola (peticiones) y catálogo ordenado con búsqueda binaria, todo implementado a mano según el enunciado del caso.
+Equipo: [@marcosdeaza](https://github.com/marcosdeaza) · [@Alvaro-Rovira](https://github.com/Alvaro-Rovira) · [@dreyaaaaaaaaaaaaa](https://github.com/dreyaaaaaaaaaaaaa)
 
-## Equipo
+## Roadmap
 
-- Marcos de Aza — [@marcosdeaza](https://github.com/marcosdeaza)
-- Álvaro Rovira — [@Alvaro-Rovira](https://github.com/Alvaro-Rovira)
-- Ange Benoit — [@dreyaaaaaaaaaaaaa](https://github.com/dreyaaaaaaaaaaaaa)
+### Fase 0 — Setup
+- [x] Repo creado, equipo con acceso
+- [x] `datos/catalogo_rap.csv` de prueba (Carti, Kendrick, Drake y compañía)
+- [ ] Esqueleto de ficheros: `cancion.py`, `estructuras.py`, `algoritmos.py`, `reproductor.py`, `main.py`
 
-## Entregables
+### Fase 1 — Diseño (entrega B3, semana 1 dic)
+- [ ] TADs: Cancion, ListaReproduccion, Pila, Cola (operaciones + pre/postcondiciones)
+- [ ] Diagramas de punteros: insertar_despues (3 casos), eliminar (4 casos), invertir (3 nodos), encolar/desencolar
+- [ ] Pseudocódigo: insertar_despues, eliminar, invertir, búsqueda binaria recursiva, inserción y mergesort sobre lista
+- [ ] Diseño recursivo D1–D5 (caso base / caso general / profundidad)
+- [ ] Previsión de costes por comando
+- [ ] Plan de pruebas: 12+ casos con comandos y salida esperada a mano
+- [ ] PDF final: `B3_deAza_Rovira_Benoit.pdf` (máx. 5 páginas)
 
-- **B3** — documento de diseño (TADs, diagramas de punteros, pseudocódigo, previsión de costes, plan de pruebas).
-- **B4** — implementación (`main.py`, `cancion.py`, `estructuras.py`, `algoritmos.py`, `reproductor.py`), pruebas unitarias, estudio de eficiencia con gráficas, e informe.
+### Fase 2 — Estructuras base
+- [ ] `Nodo`, `ListaDoble` (insertar_final, insertar_despues, insertar_en, eliminar, buscar, indice)
+- [ ] `Pila`, `Cola` enlazadas (nada de `list`/`deque`)
+- [ ] `ordenar_insercion_array` sobre el catálogo + `busqueda_binaria_iter`/`_rec`
+- [ ] Tests unitarios de todos los casos borde (Parte B)
 
-## Reglas clave del enunciado
+### Fase 3 — El reproductor
+- [ ] Las 9 reglas del apartado C.1
+- [ ] Los 15 comandos con mensajes exactos (C.2)
+- [ ] `main.py` reproduce el ejemplo del Anexo B carácter a carácter
 
-- `ListaDoble`, `Pila`, `Cola`: implementación propia con nodos enlazados. Nada de `list`, `collections.deque` ni `dict` para guardar sus elementos.
-- Catálogo: se guarda en una `list` de Python (el array permitido).
+### Fase 4 — Recursividad, búsqueda y orden
+- [ ] D1 (duracion_total rec/iter), D2 (canciones_de), D3 (invertir), D4 (binaria rec), D5 (mergesort)
+- [ ] `ordenar_insercion` y `ordenar_merge` sobre la lista — estables, reenlazando nodos
+
+### Fase 5 — Eficiencia + informe (entrega B4, semana 21 dic)
+- [ ] `eficiencia/experimentos.py`: secuencial vs binaria, inserción vs mergesort, recursiva vs iterativa, insertar en medio vs `list.insert`
+- [ ] Gráficas reales en `eficiencia/graficas/`
+- [ ] `informe.pdf`: cambios vs B3, costes revisados, experimentos, respuestas D/E/F/G, resultado de pruebas, limitaciones
+
+### Fase 6 — Pulido (lo que lo hace de 10)
+- [ ] Código modular, nombres claros, sin dead code
+- [ ] Cobertura de tests real, no solo el ejemplo del Anexo B
+- [ ] Alguna ampliación opcional si sobra tiempo (ALEATORIO, REPETIR, quicksort...)
+- [ ] Revisar que nada usa `sorted()`, `list.sort()`, `bisect`, `list.index()` ni `in` sobre el catálogo — es 0 automático si se cuela
+
+## Reglas que no se pueden romper
+
+- `ListaDoble`, `Pila`, `Cola`: implementación propia con nodos, nada de `list`/`deque`/`dict` para guardar sus elementos.
+- Catálogo: sí es `list` de Python (el array permitido).
 - Prohibido `sorted()`, `list.sort()`, `bisect`, `list.index()`, `in` sobre el catálogo.
 - Ordenar la lista enlazada = reenlazar nodos, nunca intercambiar datos ni volcar a un array.
-- Módulos permitidos: `sys`, `time`, `random`, `csv`, `unittest` y, solo para gráficas, `matplotlib`.
+- Módulos permitidos: `sys`, `time`, `random`, `csv`, `unittest`, y solo para gráficas `matplotlib`.
 
 ## Ejecutar (cuando haya código)
 
 ```bash
-python3 main.py catalogo.csv comandos.txt
-```
-
-## Pruebas
-
-```bash
+python3 main.py datos/catalogo_rap.csv comandos.txt
 python3 -m unittest discover -s pruebas
 ```
