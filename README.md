@@ -12,6 +12,8 @@ Equipo: [@marcosdeaza](https://github.com/marcosdeaza) · [@Alvaro-Rovira](https
 - [ ] Esqueleto de ficheros: `cancion.py`, `estructuras.py`, `algoritmos.py`, `reproductor.py`, `main.py`
 
 ### Fase 1 — Diseño (entrega B3, semana 1 dic)
+
+Borrador inicial: [análisis y primeros diagramas](b3/diseno_inicial.md).
 - [ ] TADs: Cancion, ListaReproduccion, Pila, Cola (operaciones + pre/postcondiciones)
 - [ ] Diagramas de punteros: insertar_despues (3 casos), eliminar (4 casos), invertir (3 nodos), encolar/desencolar
 - [ ] Pseudocódigo: insertar_despues, eliminar, invertir, búsqueda binaria recursiva, inserción y mergesort sobre lista
