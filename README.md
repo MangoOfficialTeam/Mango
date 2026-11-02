@@ -9,7 +9,7 @@ Equipo: [@marcosdeaza](https://github.com/marcosdeaza) · [@Alvaro-Rovira](https
 ### Fase 0 — Setup
 - [x] Repo creado, equipo con acceso
 - [x] `datos/catalogo_rap.csv` de prueba (Carti, Kendrick, Drake y compañía)
-- [ ] Esqueleto de ficheros: `cancion.py`, `estructuras.py`, `algoritmos.py`, `reproductor.py`, `main.py`
+- [x] Archivos iniciales: `cancion.py`, `estructuras.py`, `algoritmos.py`, `reproductor.py`, `main.py`
 
 ### Fase 1 — Diseño (entrega B3, semana 1 dic)
 - [ ] TADs: Cancion, ListaReproduccion, Pila, Cola (operaciones + pre/postcondiciones)
@@ -54,9 +54,24 @@ Equipo: [@marcosdeaza](https://github.com/marcosdeaza) · [@Alvaro-Rovira](https
 - Ordenar la lista enlazada = reenlazar nodos, nunca intercambiar datos ni volcar a un array.
 - Módulos permitidos: `sys`, `time`, `random`, `csv`, `unittest`, y solo para gráficas `matplotlib`.
 
-## Ejecutar (cuando haya código)
+## Estado actual
+
+Primera versión en construcción: carga el catálogo CSV, lo ordena por inserción y permite probar `AGREGAR`, `INSERTAR` y `MOSTRAR`. Los demás comandos, la pila, la cola, las pruebas completas y el diseño B3 están pendientes. No es todavía la entrega final.
+
+```text
+Mango/
+├── main.py             # lectura de archivos y ejecución
+├── cancion.py          # datos y formato de una canción
+├── estructuras.py      # nodos y lista doble (parcial)
+├── algoritmos.py       # inserción y búsqueda del catálogo
+├── reproductor.py      # estado y primeros comandos
+├── datos/              # catálogo y comandos de ejemplo
+└── pruebas/            # pruebas iniciales
+```
+
+## Ejecutar
 
 ```bash
-python3 main.py datos/catalogo_rap.csv comandos.txt
+python3 main.py datos/catalogo_rap.csv datos/comandos_ejemplo.txt
 python3 -m unittest discover -s pruebas
 ```
